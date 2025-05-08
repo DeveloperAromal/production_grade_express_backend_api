@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import ambulanceRoutes from "./routes/ambulance.route.js";
 import doctorRoutes from "./routes/doctor.route.js";
+import cronRoute from "./routes/cron.route.js";
 import locationRoutes from "./routes/livelocation.route.js";
 import { startPollingLocations } from "./services/livelocation.service.js";
 
@@ -23,6 +24,7 @@ startPollingLocations();
 app.use("/livelocation", locationRoutes);
 app.use("/doctor", doctorRoutes);
 app.use("/ambulance", ambulanceRoutes);
+app.use("/api/cron", cronRoute);
 
 app.listen(port, () => {
   console.log(`🚑 Server running on port ${port}`);

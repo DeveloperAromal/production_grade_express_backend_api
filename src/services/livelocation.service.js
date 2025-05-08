@@ -1,12 +1,10 @@
+/* eslint-disable no-undef */
 import dotenv from "dotenv";
 import { createClient } from "@supabase/supabase-js";
 
 dotenv.config();
-// eslint-disable-next-line no-undef
 const supabase = createClient(
-  // eslint-disable-next-line no-undef
   process.env.SUPABASE_URL,
-  // eslint-disable-next-line no-undef
   process.env.SUPABASE_ANON_KEY
 );
 let latestLocations = {};
