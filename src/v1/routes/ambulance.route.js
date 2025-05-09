@@ -3,6 +3,6 @@ import { findNearestAmbulance } from "../controllers/ambulance.controller.js";
 
 const router = express.Router();
 
-router.post("/", findNearestAmbulance);
+router.post("/ambulance", findNearestAmbulance);
 
 export default router;

@@ -3,6 +3,6 @@ import { getLocation } from "../controllers/livelocation.controller.js";
 
 const router = express.Router();
 
-router.post("/", getLocation);
+router.post("/live-location", getLocation);
 
 export default router;

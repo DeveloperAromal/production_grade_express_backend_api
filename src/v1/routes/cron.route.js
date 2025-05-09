@@ -3,6 +3,6 @@ import { runCronUpdate } from "../controllers/cron.controller.js";
 
 const router = express.Router();
 
-router.post("/", runCronUpdate);
+router.post("/cron", runCronUpdate);
 
 export default router;

@@ -1,16 +1,17 @@
+/* eslint-disable no-undef */
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import ambulanceRoutes from "./routes/ambulance.route.js";
-import doctorRoutes from "./routes/doctor.route.js";
-import cronRoute from "./routes/cron.route.js";
-import searchRoutes from "./routes/search.route.js";
-import locationRoutes from "./routes/livelocation.route.js";
-import { startPollingLocations } from "./services/livelocation.service.js";
+import ambulanceRoutes from "./v1/routes/ambulance.route.js";
+import doctorRoutes from "./v1/routes/doctor.route.js";
+import cronRoute from "./v1/routes/cron.route.js";
+import searchRoutes from "./v1/routes/search.route.js";
+import locationRoutes from "./v1/routes/livelocation.route.js";
+import estimatedTimeRoute from "./v1/routes/estimatedTime.route.js";
+import { startPollingLocations } from "./v1/services/livelocation.service.js";
 
 dotenv.config();
 const app = express();
-// eslint-disable-next-line no-undef
 const port = process.env.PORT || 3000;
 
 app.use(cors());
@@ -22,11 +23,12 @@ app.get("/", (req, res) => {
 
 startPollingLocations();
 
-app.use("/livelocation", locationRoutes);
-app.use("/doctor", doctorRoutes);
-app.use("/ambulance", ambulanceRoutes);
-app.use("/query", searchRoutes);
-app.use("/api/cron", cronRoute);
+app.use("/api/v1", locationRoutes);
+app.use("/api/v1", doctorRoutes);
+app.use("/api/v1", ambulanceRoutes);
+app.use("/api/v1", searchRoutes);
+app.use("/api/v1", estimatedTimeRoute);
+app.use("/api/v1", cronRoute);
 
 app.listen(port, () => {
   console.log(`🚑 Server running on port ${port}`);

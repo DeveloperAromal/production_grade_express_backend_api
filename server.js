@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import dotenv from "dotenv";
 import app from "./src/app.js";
-import { startReportCron } from "./src/cron/initializeCron.js";
+import { startReportCron } from "./src/v1/cron/initializeCron.js";
 
 dotenv.config();
 const PORT = process.env.PORT;

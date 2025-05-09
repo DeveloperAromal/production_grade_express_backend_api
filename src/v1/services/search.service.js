@@ -2,7 +2,7 @@ import Fuse from "fuse.js";
 import fs from "fs";
 import path from "path";
 
-const questionsPath = path.resolve("./src/data/searchResults.json");
+const questionsPath = path.resolve("./src/v1/data/searchResults.json");
 const questionsData = fs.readFileSync(questionsPath);
 const questions = JSON.parse(questionsData);
 

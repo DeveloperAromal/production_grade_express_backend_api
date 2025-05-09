@@ -3,7 +3,6 @@ import { getDoctorMessage } from "../controllers/doctor.controller.js";
 
 const router = express.Router();
 
-// POST route for doctor message
-router.post("/chat", getDoctorMessage);
+router.post("/doctor", getDoctorMessage);
 
 export default router;
