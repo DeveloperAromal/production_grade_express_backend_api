@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import ambulanceRoutes from "./routes/ambulance.route.js";
 import doctorRoutes from "./routes/doctor.route.js";
 import cronRoute from "./routes/cron.route.js";
+import searchRoutes from "./routes/search.route.js";
 import locationRoutes from "./routes/livelocation.route.js";
 import { startPollingLocations } from "./services/livelocation.service.js";
 
@@ -24,6 +25,7 @@ startPollingLocations();
 app.use("/livelocation", locationRoutes);
 app.use("/doctor", doctorRoutes);
 app.use("/ambulance", ambulanceRoutes);
+app.use("/query", searchRoutes);
 app.use("/api/cron", cronRoute);
 
 app.listen(port, () => {

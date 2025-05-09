@@ -1,0 +1,14 @@
+[
+    {
+        "question": "What is JavaScript?",
+        "answer": "JavaScript is a programming language."
+    },
+    {
+        "question": "What is Node.js?",
+        "answer": "Node.js is a JavaScript runtime environment."
+    },
+    {
+        "question": "What is Express?",
+        "answer": "Express is a Node.js web framework."
+    }
+]

@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import https from "https";
 
-// Function to fetch doctor message
 const fetchDoctorMessage = (data) => {
   return new Promise((resolve, reject) => {
     const options = {
@@ -43,4 +42,4 @@ const fetchDoctorMessage = (data) => {
   });
 };
 
-export default fetchDoctorMessage; // Default export
+export default fetchDoctorMessage;
