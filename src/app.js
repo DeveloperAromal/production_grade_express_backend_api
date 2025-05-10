@@ -2,7 +2,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import usersRoute from "./v1/routes/users.route.js";
+// import usersRoute from "./v1/routes/users.route.js";
 import ambulanceRoutes from "./v1/routes/ambulance.route.js";
 import doctorRoutes from "./v1/routes/doctor.route.js";
 import cronRoute from "./v1/routes/cron.route.js";
@@ -29,7 +29,7 @@ app.use("/api/v1", doctorRoutes);
 app.use("/api/v1", ambulanceRoutes);
 app.use("/api/v1", searchRoutes);
 app.use("/api/v1", estimatedTimeRoute);
-app.use("/api/v1", usersRoute);
+// app.use("/api/v1", usersRoute);
 app.use("/api/v1", cronRoute);
 
 app.listen(port, () => {
